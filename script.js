@@ -1,0 +1,14 @@
+const navToggle = document.querySelector("[data-nav-toggle]");
+const navMenu = document.querySelector("[data-nav-menu]");
+const yearTargets = document.querySelectorAll("[data-year]");
+
+if (navToggle && navMenu) {
+    navToggle.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+}
+
+yearTargets.forEach((node) => {
+    node.textContent = new Date().getFullYear();
+});
